@@ -6,11 +6,12 @@
     </div>
     <div class="group relative">
         <h3
-            class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+            class="flex items-center justify-between mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
             <a href="{{ route('posts.show', $post->slug) }}">
                 <span class="absolute inset-0"></span>
-                {{ $post->title }}
+                <span>{{ $post->title }}</span>
             </a>
+
         </h3>
         <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600 dark:text-gray-400">
             {!! $post->content !!}
