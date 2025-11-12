@@ -9,9 +9,15 @@
       <p class="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">
         {{ $post->published_at->format('M d, Y') }}
     </p>
-      <h1 class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
-        {{ $post->title }}
-      </h1>
+    <div class="flex items-center justify-between">
+
+        <h1 class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
+          {{ $post->title }}
+        </h1>
+          @auth
+          <a href="{{ route('posts.edit', $post->slug) }}" class="outline px-2 text-sm py-1 text-gray-900 dark:text-white">edit</a>
+          @endauth
+    </div>
       <div class="mt-10  gap-8 text-base/7 text-gray-700 lg:max-w-none dark:text-gray-300">
         {!! $post->content !!}
       </div>
